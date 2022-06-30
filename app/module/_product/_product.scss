@@ -1,0 +1,230 @@
+.product {
+
+    &__inner {
+        margin-bottom: 70px;
+        text-align: center;
+    }
+
+    &__filter {
+        margin-bottom: 50px;
+    }
+
+    &__items {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 30px 30px;
+        margin-bottom: 50px;
+    }
+
+    &__list {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__list-item:not(:last-child) {
+        margin-right: 24px;
+    }
+
+    &__btn {
+        @extend %opensans-700;
+        font-size: 15px;
+        color: $subtitle;
+        text-transform: uppercase;
+        border-bottom: 3px solid transparent;
+        transition: all .3s;
+
+        &.mixitup-control-active {
+            border-bottom: 3px solid #E0EDCF;
+        }
+    }
+}
+
+.product-item {
+    &.product-item--list {
+        min-width: 100%;
+        height: 250px;
+
+        .list__inner {
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-end;
+
+            .product-item__images {
+                margin: 0 20px 0 0;
+                height: 180px;
+            }
+
+            .product-item__bottom {
+                width: 100%;
+                font-size: 18px;
+            }
+        }
+    }
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 409px;
+    border: 1px solid rgba(17, 17, 17, 0.2);
+    border-radius: 6px;
+    max-width: 290px;
+    padding: 12px;
+    text-align: left;
+
+    &--new {
+        .product-item__top::before {
+            content: 'НОВИНКА';
+            position: absolute;
+            padding: 3px 6px;
+            background-color: $accent;
+            border-radius: 6px;
+            top: 0;
+            left: 0;
+        }
+    }
+
+    &--hit {
+        .product-item__top::before {
+            content: 'ХИТ';
+            position: absolute;
+            padding: 3px 6px;
+            background-color: #FF7A00;
+            border-radius: 6px;
+            top: 0;
+            left: 0;
+        }
+    }
+
+    &__top {
+        height: 40px;
+        margin-bottom: 5px;
+        display: flex;
+        align-items: flex-end;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        font-size: 10px;
+        line-height: 1;
+        color: #fff;
+        @extend %opensans-700;
+        position: relative;
+    }
+
+    &__discount {
+        padding: 3px 6px;
+        background-color: $special;
+        border-radius: 6px;
+        order: 2;
+    }
+
+    &__images {
+        object-fit: cover;
+        margin-bottom: 10px;
+    }
+
+    &__bottom {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100px;
+    }
+
+    &__name {
+        @extend %opensans-600;
+        overflow: hidden;
+    }
+
+    &__cart {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        color: $subtitle;
+    }
+
+    &__old-price {
+        color: #C1C1C1;
+        text-decoration: line-through
+    }
+
+    &__link {
+        padding-top: 4px;
+    }
+}
+
+.btn__product {
+    display: inline-block;
+}
+
+@media (max-width:992px) {
+    .product {
+        &__items {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+}
+
+@media (max-width:768px) {
+    .product {
+
+        &__items {
+            grid-gap: 15px 15px;
+        }
+
+        &-item {
+            height: 325px;
+
+            // &__name {
+            //     // overflow: hidden;
+            // }
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .product {
+
+        &__inner {
+            margin-bottom: 50px;
+        }
+
+        &__list {
+            flex-wrap: wrap;
+
+            &-item {
+                margin-bottom: 10px;
+            }
+        }
+
+        &__items {
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 5px 5px;
+            justify-items: center;
+            margin-bottom: 25px;
+        }
+
+        &-item {
+            height: 305px;
+
+            &__images {
+                width: 70%;
+                align-self: center;
+            }
+        }
+    }
+
+    .list__inner {
+        display: flex;
+        flex-direction: column;
+        max-height: 230px;
+
+        a {
+            display: flex;
+            justify-content: center;
+        }
+    }
+}
+
+@media (max-width: 370px) {
+    .product-item {
+        max-width: 145px;
+    }
+}

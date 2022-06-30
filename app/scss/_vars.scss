@@ -1,0 +1,39 @@
+$default: #121212;
+$accent: #63A60E;
+$subtitle: #505050;
+$special: #CF3E3B;
+$bg: #f6f6f6;
+
+%opensans-400 {
+    font-family: 'OpenSans-Regular', sans-serif;
+    font-weight: 400;
+}
+
+%opensans-600 {
+    font-family: 'OpenSans-SemiBold', sans-serif;
+    font-weight: 600;
+}
+
+%opensans-700 {
+    font-family: 'OpenSans-Bold', sans-serif;
+    font-weight: 700;
+}
+
+%ruda-600 {
+    font-family: 'Ruda-SemiBold', sans-serif;
+    font-weight: 600;
+}
+
+%ruda-900 {
+    font-family: 'Ruda-Black', sans-serif;
+    font-weight: 900;
+}
+
+%checkbox-hidden,
+%radio-hidden {
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    position: absolute;
+}

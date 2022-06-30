@@ -1,0 +1,86 @@
+.advantages {
+    background-color: #F6F6F6;
+    padding: 50px 0 30px;
+    margin-bottom: 70px;
+
+    &__inner {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__item {
+        position: relative;
+        max-width: 190px;
+
+        &::before {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            left: -74px;
+        }
+    }
+
+    &__item--scooter::before {
+        content: url(../images/icon/scooter.svg);
+    }
+
+    &__item--box::before {
+        content: url(../images/icon/box.svg);
+    }
+
+    &__item--hours::before {
+        content: url(../images/icon/hours.svg);
+    }
+
+    &__item:not(:last-child) {
+        margin-right: 140px;
+    }
+
+    &__title {
+        font-size: 16px;
+        @extend %opensans-600;
+        margin-bottom: 8px;
+    }
+
+    &__text {
+        color: $subtitle;
+    }
+}
+
+@media (max-width: 992px) {
+    .advantages {
+        display: flex;
+        padding: 30px 0;
+
+        &__inner {
+            width: 300px;
+            flex-wrap: wrap;
+        }
+
+        &__item {
+            max-width: 300px;
+            width: 100%;
+            padding-left: 75px;
+
+            &::before {
+                left: 0;
+            }
+
+            &:not(:last-child) {
+                margin-right: 0;
+                margin-bottom: 30px;
+            }
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .advantages {
+        margin-bottom: 50px;
+
+        &__inner {
+            justify-content: flex-start;
+            width: 100%;
+        }
+    }
+}

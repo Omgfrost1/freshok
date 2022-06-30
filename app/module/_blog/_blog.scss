@@ -1,0 +1,118 @@
+.partners {
+    margin-bottom: 70px;
+
+    &__list {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+}
+
+.blog {
+    padding: 70px 0;
+
+    &__title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 30px;
+
+        & h3 {
+            margin-bottom: 0;
+        }
+    }
+
+    &__link {
+        color: $accent;
+        line-height: 1.3;
+        @extend %opensans-700;
+        border-bottom: 2px solid $accent;
+    }
+
+    &__items {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__item {
+        max-width: 410px;
+        background-color: #fff;
+        box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25);
+        border-radius: 6px;
+        position: relative;
+    }
+
+    &__date {
+        width: 65px;
+        height: 76px;
+        background-color: #fff;
+        position: absolute;
+        font-size: 10px;
+        margin-left: 20px;
+        border-radius: 0px 0px 4px 4px;
+        @extend %opensans-700;
+        text-align: center;
+        align-content: center;
+        padding-top: 18px;
+
+        & span {
+            font-size: 30px;
+            line-height: 1;
+            @extend %ruda-600;
+            display: block;
+        }
+    }
+
+    &__img {
+        height: 240px;
+        object-fit: cover;
+        border-radius: 6px 6px 0 0;
+        margin-bottom: 20px;
+    }
+
+    &__text {
+        padding: 0 18px 18px 18px;
+        font-size: 16px;
+        line-height: 1.5;
+        @extend %opensans-600;
+    }
+}
+
+@media (max-width:1270px) {
+    .blog {
+        &__items {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        &__item {
+            margin: 20px;
+        }
+    }
+}
+
+@media (max-width:576px) {
+    .partners {
+        margin-bottom: 50px;
+
+        &__item:nth-child(n+3) {
+            display: none;
+        }
+    }
+
+    .blog {
+        padding: 50px 0;
+
+        &__item {
+            margin: 0 0 15px 0;
+        }
+
+        &__img {
+            margin-bottom: 15px;
+        }
+
+        &__text {
+            padding: 0 15px 15px 15px;
+        }
+    }
+}

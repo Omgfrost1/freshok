@@ -1,0 +1,195 @@
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-size: 14px;
+    line-height: 1.4;
+    color: $default;
+    @extend %opensans-400;
+    display: flex;
+    flex-direction: column;
+}
+
+button {
+    background-color: transparent;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+}
+
+.main {
+    flex-grow: 1;
+}
+
+.container {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.btn {
+    border: 1px solid transparent;
+    background-color: $accent;
+    color: #fff;
+    font-size: 18px;
+    line-height: 1.3;
+    padding: 12px 24px;
+    border-radius: 6px;
+    transition: all .5s;
+
+    &:hover {
+        background-color: transparent;
+        color: $accent;
+        border: 1px solid $accent;
+    }
+}
+
+.title {
+    @extend %ruda-600;
+    font-size: 32px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+.breadcrumbs {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    &__list {
+        font-size: 22px;
+        @extend %ruda-900;
+        display: flex;
+    }
+
+    &__item {
+        position: relative;
+        margin: 0 5px;
+
+        &::before {
+            content: '';
+            position: absolute;
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 20px;
+            height: 20px;
+        }
+
+        &:first-child::before {
+            background-image: url(../images/icon/home.svg);
+            top: 3px;
+            left: -5px;
+        }
+
+        &::before {
+            background-image: url(../images/icon/bread-arrow.svg);
+            top: 5px;
+            left: -15px;
+        }
+
+        &:last-child {
+            color: $accent;
+        }
+    }
+
+    &__link {
+        padding: 0 20px;
+
+    }
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    padding: 30px 0;
+
+    .pagination__list {
+        display: flex;
+        padding: 0 35px;
+    }
+
+    &__item {
+        padding: 0 15px;
+    }
+
+    &__link--active {
+        color: $accent;
+    }
+
+    &__arrows {
+        text-transform: uppercase;
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            background-image: url(../images/icon/bread-arrow.svg);
+            width: 20px;
+            height: 20px;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    }
+
+    &__prev {
+        padding-left: 15px;
+
+        &::before {
+            left: -5px;
+            transform: rotate(180deg);
+        }
+    }
+
+    &__next {
+        padding-right: 15px;
+
+        &::before {
+            right: -5px;
+        }
+    }
+}
+
+.lock {
+    overflow: hidden;
+}
+
+@media (max-width:992px) {
+    .pagination {
+        &__arrows {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .title {
+        font-size: 24px;
+    }
+
+    .breadcrumbs {
+        &__list {
+            font-size: 18px;
+        }
+
+        &__item:first-child {
+            margin-right: 20px;
+        }
+
+        &__item:first-child::before {
+            left: -20px;
+            top: 1px;
+        }
+
+        &__item::before {
+            left: -20px;
+            top: 3px;
+        }
+
+        &__link {
+            padding: 0;
+        }
+    }
+}

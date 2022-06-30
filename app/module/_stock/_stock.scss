@@ -1,0 +1,166 @@
+.stock {
+    &__wrapper {
+        padding: 70px 0;
+        background-color: #F5F5F5;
+    }
+
+    &__inner {
+        text-align: center;
+    }
+
+    &__filter {
+        margin-bottom: 50px;
+    }
+
+    &__list {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__list-item:not(:last-child) {
+        margin-right: 30px;
+    }
+
+    &__list-btn {
+        @extend %opensans-700;
+        font-size: 15px;
+        color: $subtitle;
+        text-transform: uppercase;
+        border-bottom: 3px solid transparent;
+        transition: all .3s;
+
+        &.mixitup-control-active {
+            border-bottom: 3px solid #E0EDCF;
+        }
+    }
+
+    &__items {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        grid-gap: 30px;
+        margin-bottom: 50px;
+        justify-items: center;
+    }
+
+    &__item {
+        height: 124px;
+        background-color: #fff;
+        border: 1px solid #C1C1C1;
+        border-radius: 6px;
+        padding: 12px;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        text-align: left;
+        color: $subtitle;
+        width: 300px;
+
+        &--new,
+        &--hit {
+            .stock__item-right::before {
+                content: 'НОВИНКА';
+                position: absolute;
+                padding: 3px 6px;
+                background-color: $accent;
+                border-radius: 6px;
+                font-size: 10px;
+                color: #fff;
+                @extend %opensans-700;
+                line-height: 1;
+            }
+        }
+
+        &--hit {
+            .stock__item-right::before {
+                content: 'ХИТ';
+                background-color: #FF7A00;
+            }
+        }
+    }
+
+    &__item-right {
+        display: flex;
+    }
+
+    &__item-left {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 164px;
+        @extend %opensans-600;
+    }
+
+    &__item-name {
+        height: 58px;
+    }
+
+    &__item-price {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        line-height: 1;
+        width: 164px;
+    }
+
+    &__item-new {
+        font-size: 20px;
+
+        & span {
+            font-size: 14px;
+        }
+    }
+
+    &__item-old {
+        font-size: 12px;
+        @extend %opensans-400;
+        color: #C1C1C1;
+        text-decoration: line-through;
+    }
+
+    &__item-rating {
+        @extend %opensans-700;
+        position: relative;
+        margin-right: 18px;
+
+        &::after {
+            content: url(../images/icon/star.svg);
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            top: -1px;
+            left: 22px;
+        }
+    }
+
+    &__item-status {
+        font-size: 10px;
+        line-height: 1;
+        color: $accent;
+
+        &.ends {
+            color: $special;
+        }
+
+        &.sold {
+            color: #C1C1C1;
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .stock {
+        &__wrapper {
+            padding: 50px 0;
+        }
+
+        &__filter {
+            margin-bottom: 25px;
+        }
+
+        &__items {
+            grid-gap: 15px 0;
+            margin-bottom: 25px;
+        }
+    }
+}
